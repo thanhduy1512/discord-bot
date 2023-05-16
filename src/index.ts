@@ -1,4 +1,5 @@
-import { EmbedBuilder, Client, IntentsBitField } from "discord.js";
+import { TextChannel } from "discord.js";
+import { EmbedBuilder, Client, IntentsBitField, Interaction } from "discord.js";
 
 require("dotenv").config();
 
@@ -12,11 +13,15 @@ const client = new Client({
   intents: [importAllIntents()],
 });
 
-client.on("ready", (c: Client) => {
+client.on("ready", async (c: Client) => {
   console.log(`${c.user?.tag} is online`);
+
+  const channel = c.channels.cache.get("1021345502215802961");
+  if (channel?.isTextBased)
+    (channel as TextChannel).send({ content: "content" });
 });
 
-client.on("interactionCreate", (interaction) => {
+client.on("interactionCreate", async (interaction: Interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
   if (interaction.commandName === "embed") {
