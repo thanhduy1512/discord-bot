@@ -6,7 +6,7 @@ export const Embed: ICommand = {
   description: "Sends an embed!",
   run: async (client: Client, interaction: ChatInputCommandInteraction) => {
     const embed = new EmbedBuilder()
-      .setTitle("Embed Title")
+      .setTitle(`Embed Title ${new Date()}`)
       .setDescription("This is an embed description")
       .setColor("Random")
       .addFields(
