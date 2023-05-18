@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "start": "node public/index.js",
-    "build": "tsc $$ node public/index.js",
+    "build": "tsc && node public/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
