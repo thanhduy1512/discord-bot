@@ -3,8 +3,11 @@ import ready from "./handlers/ready";
 import messageCreate from "./handlers/messageCreate";
 import interactionCreate from "./handlers/interactionCreate";
 import messageReactionAdd from "./handlers/messageReactionAdd";
+import { registerCommand } from "./register/register-commands";
 
 require("dotenv").config();
+
+registerCommand();
 
 const importAllIntents = (): number[] => {
   return Object.values(IntentsBitField.Flags).filter((e) =>
