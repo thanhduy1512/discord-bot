@@ -30,4 +30,3 @@ const client = new discord_js_1.Client({
 (0, messageCreate_1.default)(client);
 (0, messageReactionAdd_1.default)(client);
 client.login(process.env.TOKEN);
-module.exports = client;
