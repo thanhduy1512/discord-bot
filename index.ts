@@ -1,9 +1,9 @@
 import { Client, EmbedBuilder, IntentsBitField } from "discord.js";
-import ready from "./handlers/ready";
-import messageCreate from "./handlers/messageCreate";
-import interactionCreate from "./handlers/interactionCreate";
-import messageReactionAdd from "./handlers/messageReactionAdd";
-import { registerCommand } from "./register/register-commands";
+import ready from "./src/handlers/ready";
+import messageCreate from "./src/handlers/messageCreate";
+import interactionCreate from "./src/handlers/interactionCreate";
+import messageReactionAdd from "./src/handlers/messageReactionAdd";
+import { registerCommand } from "./src/register/register-commands";
 
 require("dotenv").config();
 
@@ -26,5 +26,3 @@ messageCreate(client);
 messageReactionAdd(client);
 
 client.login(process.env.TOKEN);
-
-module.exports = client;
