@@ -3,9 +3,7 @@
     "name": "discord-bot",
     "buildCommand": "yarn build",
     "outputDirectory": "public",
-    "builds": [
-      { "src": "public/index.js", "use": "@vercel/node" }
-    ],
+   
     "routes": [
         { "src": "/(.*)", "dest": "public/index.js" }
       ]
