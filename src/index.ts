@@ -26,3 +26,5 @@ messageCreate(client);
 messageReactionAdd(client);
 
 client.login(process.env.TOKEN);
+
+module.exports = client;
