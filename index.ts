@@ -4,6 +4,7 @@ import messageCreate from "./src/handlers/messageCreate";
 import interactionCreate from "./src/handlers/interactionCreate";
 import messageReactionAdd from "./src/handlers/messageReactionAdd";
 import { registerCommand } from "./src/register/register-commands";
+import keepAlive from "./server";
 
 require("dotenv").config();
 
@@ -26,3 +27,5 @@ messageCreate(client);
 messageReactionAdd(client);
 
 client.login(process.env.TOKEN);
+
+keepAlive();
