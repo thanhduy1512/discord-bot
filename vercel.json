@@ -1,7 +1,9 @@
 {
     "version": 2,
     "name": "discord-bot",
-   
+    "builds": [
+      { "src": "src/index.ts", "use": "@vercel/node" }
+    ],
     "routes": [
         { "src": "/(.*)", "dest": "public/index.js" }
       ]
