@@ -1,10 +1,12 @@
 {
     "version": 2,
     "name": "discord-bot",
+    "buildCommand": "yarn build",
+    "outputDirectory": "public",
     "builds": [
-      { "src": "vercel/output/index.js", "use": "@vercel/node" }
+      { "src": "public/index.js", "use": "@vercel/node" }
     ],
     "routes": [
-        { "src": "/(.*)", "dest": "vercel/output/index.js" }
+        { "src": "/(.*)", "dest": "public/index.js" }
       ]
   }
